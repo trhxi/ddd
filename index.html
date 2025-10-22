@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=1024, initial-scale=1">
 <title>TECHNO POWER — Мир шлангов</title>
 <style>
   :root{
-    --bg:url('fon.jpg');
+    --bg:url('fon1.jpg');
     --accent:#ff7b00;
     --accent-2:#ffa733;
     --card:#2a2a2a;
@@ -19,7 +19,7 @@
   html,body{height:100%;}
   body{
     margin:0;
-    background:var(--bg);
+    background:var(--bg) no-repeat center center / cover;
     color:#222;
     line-height:1.4;
     -webkit-font-smoothing:antialiased;
@@ -56,12 +56,12 @@
   .hero{
     margin-top:6px;
     background:#2a2a2a;
-    border-radius:var(--rounded);
+    border-radius:0px;
     padding:28px;
     display:flex;
     gap:20px;
     align-items:center;
-    overflow:hidden;
+    overflow:visible !important;;
     box-shadow:0 6px 18px rgba(0,0,0,0.06);
   }
   .hero .left{flex:1;}
@@ -134,12 +134,15 @@ header p {
   background: #2a2a2a;
   border-radius: 20px;
   color: #ffffff;
+  margin-top: 15px;
 
 }
 
 .contacts .left {
   flex: 1;
   min-width: 280px;
+  position: relative;
+  top: -25px;
 }
 
 .contacts .right {
@@ -159,11 +162,152 @@ header p {
 .reviews_block {
   background:#2a2a2a;
   color:#2a2a2a;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
 }
 .reviews_block h3 {
   color:#ff7b00;
   margin-left: 20px;
 }
+.heroImg {
+  width: 100%;
+  height: 200px;
+  max-width: 500px; /* ограничение, чтобы не расползалось слишком сильно */
+  display: block;
+  margin: 0 auto;
+  margin-top: -10px;
+}
+.hero {
+  border-radius: 15px; /* можно оставить */
+  overflow: visible;   /* исправление */
+  align-items: center;
+}
+.visual {
+  overflow: visible !important;
+  border-radius: 0;
+  background: none;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.btn-img {
+  width: 160px;
+  height: 100px;
+  border-radius: 12px;
+  background-size: cover;         /* картинка на весь блок */
+  background-position: center;    /* центрируем */
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mainBtn {
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff8a00, #ffb300);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mainBtn:hover {
+  transform: translateY(-3px);
+}
+.hhhh{
+  color: #ff7b00;
+}
+h3 {
+  color: #ff7b00; /* твой акцентный оранжевый */
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg) no-repeat center center / cover;
+  background-attachment: fixed;
+  background-color: #000; /* запасной цвет, если картинка не загрузилась */
+  overflow-x: hidden; /* убирает горизонтальную прокрутку */
+}
+
+
+body {
+  background: var(--bg) no-repeat center center / cover;
+  background-attachment: fixed;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px; /* ← добавляет отступ сверху/снизу и по бокам */
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* расстояние между блоками */
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 200px; /* зафиксируем ширину, чтобы всё было ровно */
+}
+
+.btn-img {
+  width: 160px;
+  height: 120px; /* фиксированная высота для выравнивания */
+  object-fit: cover; /* обрежет лишнее, чтобы сохранить пропорции */
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: transform 0.3s;
+}
+
+.btn-img:hover {
+  transform: scale(1.05);
+}
+
+.mainBtn {
+  width: 100%;
+  font-size: 15px;
+  padding: 8px 0;
+  margin-bottom: 4px;
+}
+
+.subText {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+
 }
 
 </style>
@@ -188,49 +332,69 @@ header p {
 
   <section class="hero" role="banner" aria-label="УТП">
     <div class="left">
-      <h2>Шланги и защита для мойки — на складе</h2>
-      <p>От 10 000 тг за 5 метров. Забирайте через 2 часа после заказа!</p>
-      <span class="utp">От 10.000 за 5 метров!</span>
+      <h2>Шланги и защита высокого давления — в Алматы</h2>
+      <p> Забирайте через 2 часа после заказа!</p>
+      <button class="utp" onclick="scrollDown()">От 10.000 за 5 метров!</button>
+
       <button class="cta" onclick="scrollToSelection()">Выбрать шланг</button>
     </div>
    <div class="visual" aria-hidden="true">
-  <img src="" alt="Шланги" class="heroImg">
+  <img src="gg.png" alt="Шланги" class="heroImg" height="400" width="400">
 </div>
 
   </section>
 
-  <section id="selection" class="block" aria-labelledby="selectTitle">
-    <h3 id="selectTitle">Выберите тип шланга</h3>
-    <div class="row">
+ <section id="selection" class="block" aria-labelledby="selectTitle">
+  <h3 id="selectTitle">Выберите тип шланга</h3>
+  <div class="row">
+
+    <div class="btn-block">
+      <img src="td.jpg" alt="6мм" class="btn-img">
       <button class="btn mainBtn" data-main="6mm">Внутренний диаметр 6мм</button>
+      <div class="subText">Используется когда длина  шланга до 15 метров и на домашних мойках 
+</div>
+    </div>
+
+    <div class="btn-block">
+      <img src="gggg.jpg" alt="8мм" class="btn-img">
       <button class="btn mainBtn" data-main="8mm">Внутренний диаметр 8мм</button>
-      <button class="btn mainBtn" data-main="protect">Защита на шланг</button>
+      <div class="subText">Используется когда длина шланга более 15 метров или на промышленных мойках 
+</div>
     </div>
 
-    <div id="secondary" class="subblock" aria-hidden="true" style="display:none"></div>
-
-    <div id="metersBlock" class="subblock" style="display:none">
-      <div class="meters" id="metersList"></div>
+    <div class="btn-block">
+      <img src="tp.jpg" alt="Защита" class="btn-img">
+      <button class="btn mainBtn" data-main="protect">Защита на шланг  </button>
+      <div class="subText">продлевает срок службы шланга</div>
     </div>
 
-    <div class="priceBox" aria-live="polite">
-      <div>
-        <div style="color:var(--muted);font-size:13px">Итоговая цена</div>
-        <div class="price" id="priceText">—</div>
-      </div>
-      <div>
-        <button class="leaveBtn" id="leaveBtn">Оставить заявку</button>
-      </div>
+  </div>
+
+  <div id="secondary" class="subblock" aria-hidden="true" style="display:none"></div>
+
+  <div id="metersBlock" class="subblock" style="display:none">
+    <div class="meters" id="metersList"></div>
+  </div>
+
+  <div class="priceBox" aria-live="polite">
+    <div>
+      <div style="color:var(--muted);font-size:13px">Итоговая цена</div>
+      <div class="price" id="priceText">—</div>
     </div>
-  </section>
+    <div>
+      <button class="leaveBtn" id="leaveBtn">Оставить заявку</button>
+    </div>
+  </div>
+</section>
+
 
   <section class="block" aria-labelledby="howTitle">
     <h3 id="howTitle">Как проходит получение товара</h3>
     <div class="steps">
       <div class="step"><div class="num">1</div><div><strong>Оставляете заявку</strong><div class="muted">Через форму или по телефону</div></div></div>
-      <div class="step"><div class="num">2</div><div><strong>Мы связываемся</strong><div class="muted">Подтверждаем заказ</div></div></div>
-      <div class="step"><div class="num">3</div><div><strong>Оплата</strong><div class="muted">Удобным способом</div></div></div>
-      <div class="step"><div class="num">4</div><div><strong>Получаете товар</strong><div class="muted">Самовывоз или Яндекс.Курьер</div></div></div>
+      <div class="step"><div class="num">2</div><div><strong>Мы связываемся с Вами</strong><div class="muted">Подтверждаем заказ в течении 10-15 минут</div></div></div>
+      <div class="step"><div class="num">3</div><div><strong>Вы оплачиваете</strong><div class="muted">Удобным для Вас способом картой/наличным расчетом</div></div></div>
+      <div class="step"><div class="num">4</div><div><strong>Получаете товар</strong><div class="muted">Самовывозом или Яндекс курьером</div></div></div>
     </div>
     <div style="margin-top:12px;text-align:right"><button class="leaveBtn" onclick="openModal()">Оставить заявку</button></div>
   </section>
@@ -257,7 +421,8 @@ header p {
  <section class="contacts" aria-labelledby="contactTitle">
   <div class="left">
     <h3 id="contactTitle">Контакты</h3>
-    <p style="margin:6px 0">Адрес: проспект Рыскулова 70, улица Жусанды 1Б</p>
+    <p style="margin:6px 0">Головной филиал: улица Жусанды 1Б</p>
+    <p style="margin:6px 0">Второй филиал: проспект Рыскулова 70</p>
     <p style="margin:6px 0">Телефон: <strong>8 (771) 772-06-53</strong></p>
     <p style="margin:6px 0">Инстаграм: <strong>@mirshlangov</strong></p>
     <p style="margin:6px 0">Часы работы: с 9:00 до 18:00</p>
@@ -277,32 +442,58 @@ header p {
   </div>
 </section>
 
-  <footer>© TECHNO POWER — Мир шлангов</footer>
+  <footer><div class="hhhh">© TECHNO POWER — Мир шлангов</div></footer>
 </div>
 
 <div class="modal" id="modal">
   <div class="modalContent" role="dialog" aria-modal="true" aria-label="Форма заявки">
     <button class="closeBtn" onclick="closeModal()">✕</button>
     <h3>Оставить заявку</h3>
-    <form id="orderForm" onsubmit="submitForm(event)">
-      <div class="formRow">
-        <input type="text" id="clientName" placeholder="Ваше имя" required />
-      </div>
-      <div class="formRow">
-        <input type="tel" id="clientPhone" placeholder="Телефон" required />
-      </div>
-      <div class="formRow">
-        <input type="text" id="productSummary" readonly />
-      </div>
-      <div style="text-align:right">
-        <button type="submit" class="leaveBtn">Отправить</button>
-      </div>
-    </form>
+   <form id="orderForm"
+      action="https://formsubmit.co/tizeev07@gmail.com"
+      method="POST"
+      onsubmit="submitForm(event)">
+  <input id="clientName" name="name" placeholder="Имя" required>
+  <input id="clientPhone" name="phone" placeholder="Телефон" required>
+  <input id="productSummary" name="product" readonly>
+  
+  <input type="hidden" name="_subject" value="Новая заявка с сайта TECHNOPower">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <button type="submit">Отправить</button>
+</form>
+
   </div>
 </div>
 
 <script>
-/* ====== Данные цен из ТЗ (структура) ====== */
+/* ====== Функция плавной прокрутки ====== */
+function smoothScrollTo(targetSelector) {
+  const target = document.querySelector(targetSelector);
+  if (!target) return;
+  
+  const startY = window.scrollY;
+  const targetY = target.getBoundingClientRect().top + window.scrollY;
+  const distance = targetY - startY;
+  const duration = 700; // время в мс
+  const startTime = performance.now();
+
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function animation(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutCubic(progress);
+    window.scrollTo(0, startY + distance * eased);
+
+    if (elapsed < duration) requestAnimationFrame(animation);
+  }
+
+  requestAnimationFrame(animation);
+}
+
+/* ====== Цены ====== */
 const prices = {
   protection: {
     "6mm": {5:5500,10:11000,12:13200,15:16500,20:22000},
@@ -320,7 +511,7 @@ const prices = {
   }
 };
 
-/* ====== UI logic ====== */
+/* ====== Основная логика ====== */
 const mainBtns = document.querySelectorAll('.mainBtn');
 const secondary = document.getElementById('secondary');
 const metersBlock = document.getElementById('metersBlock');
@@ -328,11 +519,7 @@ const metersList = document.getElementById('metersList');
 const priceText = document.getElementById('priceText');
 const leaveBtn = document.getElementById('leaveBtn');
 
-let state = {
-  main: null,       // '6mm' | '8mm' | 'protect'
-  secondary: null,  // for hoses: '1SN'|'2SN' ; for protect: '6mm'|'8mm' (same)
-  meters: null
-};
+let state = { main: null, secondary: null, meters: null };
 
 function resetSecondary(){
   secondary.innerHTML='';
@@ -349,6 +536,7 @@ mainBtns.forEach(b=>{
     b.classList.add('active');
     state.main = b.dataset.main;
     buildSecondary(state.main);
+    smoothScrollTo('#selection'); // ✅ плавная прокрутка к выбору
   });
 });
 
@@ -356,17 +544,13 @@ function buildSecondary(main){
   resetSecondary();
   secondary.style.display='flex';
   if(main === 'protect'){
-    // offer 6mm / 8mm protection types
     const btn6 = makeBtn('Защита 6мм','protect-6mm'); btn6.onclick=()=>selectSecondary('6mm');
     const btn8 = makeBtn('Защита 8мм','protect-8mm'); btn8.onclick=()=>selectSecondary('8mm');
     secondary.appendChild(btn6); secondary.appendChild(btn8);
   } else {
-    // hoses: show 1SN / 2SN and also ensure selected diameter matches main (6/8)
     const btn1 = makeBtn('1SN','1SN'); btn1.onclick=()=>selectSecondary('1SN');
     const btn2 = makeBtn('2SN','2SN'); btn2.onclick=()=>selectSecondary('2SN');
     secondary.appendChild(btn1); secondary.appendChild(btn2);
-    // also set default diameter to selected main
-    // state.secondary will be set on SN selection
   }
 }
 
@@ -379,18 +563,12 @@ function makeBtn(text, id){
 }
 
 function selectSecondary(val){
-  // mark active
   Array.from(secondary.children).forEach(ch=>ch.classList.remove('active'));
-  const clicked = Array.from(secondary.children).find(ch=>ch.onclick && (ch.id.includes(val) || ch.innerText.includes(val)));
-  // fallback: find by text content
-  if(!clicked){
-    // try by button text
-    const found = Array.from(secondary.children).find(ch=>ch.innerText.includes(val) || ch.id===val);
-    if(found) found.classList.add('active');
-  } else clicked.classList.add('active');
-
+  const found = Array.from(secondary.children).find(ch=>ch.innerText.includes(val) || ch.id===val);
+  if(found) found.classList.add('active');
   state.secondary = val;
   buildMeters();
+  smoothScrollTo('#metersBlock'); // ✅ плавная прокрутка к метрам
 }
 
 function buildMeters(){
@@ -406,6 +584,7 @@ function buildMeters(){
       el.classList.add('active');
       state.meters = m;
       calcPrice();
+      smoothScrollTo('.priceBox'); // ✅ плавная прокрутка к итогу
     });
     metersList.appendChild(el);
   });
@@ -413,32 +592,22 @@ function buildMeters(){
 }
 
 function calcPrice(){
-  // determine price based on state
   if(!state.main || !state.secondary || !state.meters) { priceText.textContent='—'; return; }
   let p = null;
   if(state.main === 'protect'){
-    // protection table uses '6mm' or '8mm' as secondary
     const diam = state.secondary;
     p = prices.protection[diam] ? prices.protection[diam][state.meters] : null;
   } else {
-    // hoses: state.main gives diameter (6mm/8mm), state.secondary gives type (1SN/2SN)
     const diam = state.main;
     const type = state.secondary;
     p = prices.hoses[type] && prices.hoses[type][diam] ? prices.hoses[type][diam][state.meters] : null;
   }
-  if(p==null) priceText.textContent='—';
-  else priceText.textContent = Number(p).toLocaleString('ru-RU') + ' тг';
+  priceText.textContent = p==null ? '—' : Number(p).toLocaleString('ru-RU') + ' тг';
 }
 
-/* helper: scroll to selection */
-function scrollToSelection(){
-  document.getElementById('selection').scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-/* Modal logic */
+/* ====== Модалка ====== */
 const modal = document.getElementById('modal');
 function openModal(){
-  // set product summary
   const summary = document.getElementById('productSummary');
   let prod = '—';
   if(state.main === 'protect'){
@@ -453,18 +622,33 @@ function closeModal(){ modal.classList.remove('open'); }
 
 leaveBtn.addEventListener('click', openModal);
 
-function submitForm(e){
+function submitForm(e) {
   e.preventDefault();
-  const name = document.getElementById('clientName').value.trim();
-  const phone = document.getElementById('clientPhone').value.trim();
-  const prod = document.getElementById('productSummary').value.trim();
-  // Здесь можно добавить запрос к серверу (fetch) для отправки заявки.
-  alert('Заявка отправлена:\n' + name + '\n' + phone + '\n' + prod);
-  document.getElementById('orderForm').reset();
-  closeModal();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+  })
+  .then(res => {
+    if (res.ok) {
+      alert('✅ Заявка успешно отправлена!');
+      form.reset();
+      closeModal();
+    } else {
+      alert('⚠️ Ошибка при отправке. Попробуйте снова.');
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert('⚠️ Не удалось отправить заявку.');
+  });
 }
 
-/* Carousel simple */
+
+/* ====== Карусель ====== */
 let carouselIndex = 0;
 const carousel = document.getElementById('carousel');
 const reviews = carousel.children;
@@ -477,22 +661,12 @@ function moveCarousel(dir){
   carousel.scrollTo({left:w,behavior:'smooth'});
 }
 
-/* quick helpers */
-function openWhatsApp(){
-  window.open('https://wa.me/77717720653','_blank');
-}
-function openTel(){
-  window.location.href = 'tel:+77117720653';
-}
-
-/* close modal on outside click */
+/* ====== Вспомогательные ====== */
+function openWhatsApp(){ window.open('https://wa.me/77717720653','_blank'); }
+function openTel(){ window.location.href = 'tel:+77117720653'; }
 modal.addEventListener('click', (ev)=>{ if(ev.target===modal) closeModal(); });
-
-/* Accessibility: allow keyboard for buttons */
-document.addEventListener('keydown', (e)=>{
-  if(e.key==='Escape') closeModal();
-});
-
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 </script>
+
 </body>
-  </html>
+</html>
