@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1">
 <title>TECHNO POWER — Мир шлангов</title>
@@ -332,9 +333,9 @@ header {
 
   <section class="hero" role="banner" aria-label="УТП">
     <div class="left">
-      <h2>Шланги и защита высокого давления — в Алматы</h2>
-      <p> Забирайте через 2 часа после заказа!</p>
-      <button class="utp" onclick="scrollDown()">От 10.000 за 5 метров!</button>
+      <h2>Шланги для мойки на складе —</h2>
+      <p>  забирайте через 2 часа после заказа !</p>
+      <button class="utp" onclick="scrollToSelection()">От 10.000 за 5 метров!</button>
 
       <button class="cta" onclick="scrollToSelection()">Выбрать шланг</button>
     </div>
@@ -666,6 +667,22 @@ function openWhatsApp(){ window.open('https://wa.me/77717720653','_blank'); }
 function openTel(){ window.location.href = 'tel:+77117720653'; }
 modal.addEventListener('click', (ev)=>{ if(ev.target===modal) closeModal(); });
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+function scrollToSelection() {
+    const target = document.querySelector('#selection');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn('Элемент #selection не найден');
+    }
+  }
+
+  // Прокрутка вниз на высоту экрана (для кнопки "От 10.000 за 5 метров!")
+  function scrollDown() {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  }
 </script>
 
 </body>
